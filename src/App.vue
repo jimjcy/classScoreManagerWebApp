@@ -1,26 +1,27 @@
 <script setup>
+import ColorButton from './components/colorButton.vue';
 const navbarStatus = ref("fold");
 </script>
 
 <template>
   <header class="header">
-    <button
+    <colorButton
+      text="菜单"
       class="menuButton"
       @click="navbarStatus = navbarStatus === 'fold' ? 'unfold' : 'fold'"
-    >
-      菜单
-    </button>
+    />
   </header>
   <aside class="navbar menu" :class="navbarStatus">
-    <p>test</p>
-    <p>test1</p>
+    <ColorButton class="menuListButton"></ColorButton>
+    <ColorButton class="menuListButton"></ColorButton>
   </aside>
+  <RouterView class=""/>
 </template>
 
 <style scoped>
 .header {
   height: 75px;
-  background-color: gray;
+  background-color: #596164;
   color: white;
   position: sticky;
   top: 0;
@@ -30,25 +31,31 @@ const navbarStatus = ref("fold");
 .menuButton {
   height: 100%;
   width: 90px;
-  border: none;
-  background-color: aliceblue;
-  font-size: 17px;
-  transition: all 0.3s ease-in-out;
+  font-size: 19px;
 }
 .menuButton:hover {
-  /* background-color: ; */
+  background-color: white;
 }
 .menu {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: gray;
+  height: calc(100% - 75px);
+  overflow: hidden;
+  position: absolute;
+  top: 75px;
+  background-color: #596164;
   transition: all 0.5s ease-in-out;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
 }
 .fold {
   width: 0px;
 }
 .unfold {
   width: 200px;
+}
+.menuListButton {
+  margin-top: 15px;
+  height: 70px;
+  width: 100%;
+  border-radius: 15px;
 }
 </style>
