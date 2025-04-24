@@ -1,5 +1,5 @@
 <script setup>
-import ColorButton from './components/colorButton.vue';
+import ColorButton from "./components/colorButton.vue";
 const navbarStatus = ref("fold");
 </script>
 
@@ -14,8 +14,9 @@ const navbarStatus = ref("fold");
   <aside class="navbar menu" :class="navbarStatus">
     <ColorButton class="menuListButton"></ColorButton>
     <ColorButton class="menuListButton"></ColorButton>
+    <ColorButton class="menuListButton"></ColorButton>
   </aside>
-  <RouterView class=""/>
+  <RouterView class="" />
 </template>
 
 <style scoped>
