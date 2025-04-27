@@ -3,7 +3,7 @@ import ColorButton from "./components/colorButton.vue";
 const menuStatus = ref("menuFold");
 const featureList = {
   "/": "主页",
-  "/login": "登录"
+  "/login": "登录",
 };
 </script>
 
@@ -72,8 +72,10 @@ const featureList = {
   border-radius: 15px;
   font-size: 19px;
 }
-/* .view {
+.view {
+  flex: 1;
+  margin-left: 20px;
   height: 100%;
   width: 100%;
-} */
+}
 </style>
