@@ -1,10 +1,22 @@
 <script setup>
 import ColorButton from "./components/colorButton.vue";
+import axios from "axios";
 const menuStatus = ref("menuFold");
 const featureList = {
   "/": "主页",
-  "/login": "登录",
+  "/login": "登录"
 };
+// const router = useRouter();
+// router.afterEach()
+const req = axios.create({
+  baseURL: import.meta.env.VITE_BACKEND_ADDR,
+  responseType: "json",
+  responseEncoding: "utf-8",
+  headers: {
+    "Content-Type": "application/json",
+  }
+})
+// req.post("/login")
 </script>
 
 <template>
@@ -29,7 +41,7 @@ const featureList = {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .header {
   height: 75px;
   background-color: #596164;
@@ -47,9 +59,9 @@ const featureList = {
   height: 100%;
   width: 90px;
   font-size: 19px;
-}
-.menuButton:hover {
-  background-color: white;
+  :hover {
+    background-color: white;
+  }
 }
 .menu {
   height: 100%;

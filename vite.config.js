@@ -1,9 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
-
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
-
 import AutoImport from "unplugin-auto-import/vite";
 
 // https://vite.dev/config/
@@ -25,5 +23,5 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5000,
   },
-  envDir: "./"
+  envDir: "./",
 });
